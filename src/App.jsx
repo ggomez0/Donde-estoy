@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
-import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
+import * as L from 'leaflet';
+import 'leaflet-defaulticon-compatibility';
 
 function App() {
   const [latlon, setLatLon] = useState(null);
@@ -53,11 +55,10 @@ function App() {
 
   return (
     <div className='justify-center text-center flex flex-col h-screen dark:text-white dark:bg-slate-900 white:bg-slate-100 white:text-black'>
-      <h1 className='mt-8 font-bold underline text-4xl'>¿Donde estoy?</h1>
-      <p className='mb-4'>La aproximacion es de +/- 100 metros</p> 
+      <h1 className='mb-4 mt-8 font-bold underline text-4xl'>¿Donde estoy?</h1>
       <h1 className='text-3xl'>Latitud: {latlon?.latitude}</h1>
       <h1 className='text-3xl mb-4'>Longitud: {latlon?.longitude}</h1>
-      <button className='btn' onClick={updateLocation}>
+      <button className='' onClick={updateLocation}>
         Actualizar ubicación
       </button>
       <div id='map' className='w-3/4 m-auto mt-4 h-96 rounded-3xl'></div>
