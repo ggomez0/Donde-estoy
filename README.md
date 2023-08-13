@@ -1,8 +1,13 @@
-# React + Vite
+# Aplicación de Geolocalización y Mapas con ReactJS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositorio contiene una aplicación web basada en ReactJS que habilitando la ubicación del usuario, muestra las coordenadas de longitud y latitud en grados, y presenta la ubicación en un mapa interactivo utilizando la librería Leaflet.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Geolocalización:** La aplicación utiliza la funcionalidad de geolocalización del navegador para obtener las coordenadas de longitud y latitud del usuario.
+
+- **Visualización de Mapas:** La librería Leaflet, integrada con React, se utiliza para mostrar un mapa interactivo en el que se representa la ubicación del usuario basada en las coordenadas obtenidas.
+
+- **Interfaz Simple:** La interfaz de la aplicación está construida utilizando componentes de React, lo que facilita la modularidad y la reutilización del código.
+
+[DEMO](https://donde-estoy.vercel.app/)
