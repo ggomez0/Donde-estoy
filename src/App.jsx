@@ -33,7 +33,7 @@ function App() {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(newMap); //Fondo Mapa
     
     const customIcon = L.icon({ //Icono marcador mapa
-      iconUrl: '/node_modules/leaflet/dist/images/marker-icon.png', 
+      iconUrl: '/src/assets/marker-icon.png', 
       iconSize: [25, 41],
       iconAnchor: [12, 41],
       popupAnchor: [1, -34],
