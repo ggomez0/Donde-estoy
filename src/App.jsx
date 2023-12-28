@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import 'leaflet/dist/leaflet.css';
-import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
 import * as L from 'leaflet';
 import 'leaflet-defaulticon-compatibility';
+import 'leaflet/dist/leaflet.css';
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
+
 
 function App() {
   const [latlon, setLatLon] = useState(null);
@@ -29,13 +30,19 @@ function App() {
     const mapContainer = document.getElementById('map');
     const newMap = L.map(mapContainer).setView([coords.latitude, coords.longitude], 17);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(newMap);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(newMap); //Fondo Mapa
+    
+    const customIcon = L.icon({ //Icono marcador mapa
+      iconUrl: '/node_modules/leaflet/dist/images/marker-icon.png', 
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+    });
+  
 
-    // Add the marker at a specific position
-    const newMarker = L.marker([coords.latitude, coords.longitude]).addTo(newMap);
-    setMarker(newMarker);
-
-    setMap(newMap);
+   
+    const newMarker = L.marker([coords.latitude, coords.longitude], {icon: customIcon}).addTo(newMap); 
+    setMap(newMap);  
   };
 
   const updateLocation = () => {
