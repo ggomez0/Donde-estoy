@@ -54,14 +54,16 @@ function App() {
   };
 
   return (
-    <div className='justify-center text-center flex flex-col h-screen dark:text-white dark:bg-slate-900 white:bg-slate-100 white:text-black'>
-      <h1 className='mb-4 mt-8 font-bold underline text-4xl'>¿Donde estoy?</h1>
-      <h1 className='text-3xl'>Latitud: {latlon?.latitude}</h1>
-      <h1 className='text-3xl mb-4'>Longitud: {latlon?.longitude}</h1>
-      <button className='' onClick={updateLocation}>
-        Actualizar ubicación
-      </button>
-      <div id='map' className='w-3/4 m-auto mt-4 h-96 rounded-3xl'></div>
+    <div className='text-center '>
+      <div className='absolute border-solid rounded-3xl dark:text-white dark:bg-slate-900 white:bg-slate-100 white:text-black p-3 top-5 right-11 z-10'>
+        <h1 className='mb-4 font-bold text-3xl'>¿Donde estoy?</h1>
+        <h1 className='text-2xl'>Latitud: {latlon?.latitude}</h1>
+        <h1 className='text-2xl mb-4'>Longitud: {latlon?.longitude}</h1>
+        <button className='' onClick={updateLocation}>
+          Actualizar ubicación
+        </button>
+        </div>
+      <div id='map' className='h-screen m-auto w-full relative z-0'></div>
     </div>
   );
 }
